@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report</title>
+</head>
+<body>
+
+    <h1>Users & Bookings</h1>
+
+    <h2>Registered Users</h2>
+    <ul id="users"></ul>
+
+    <h2>Slot Report</h2>
+    <table border="1" id="report">
+        <tr>
+            <th>User</th>
+            <th>Slots</th>
+        </tr>
+    </table>
+
+    <script>
+        // Fetch users
+        fetch("http://localhost:3000/users")
+            .then(res => res.json())
+            .then(data => {
+                const ul = document.getElementById("users");
+
+                data.forEach(u => {
+                    ul.innerHTML += `<li>${u.username}</li>`;
+                });
+            });
+
+        // Fetch report
+        fetch("http://localhost:3000/report")
+            .then(res => res.json())
+            .then(data => {
+                const table = document.getElementById("report");
+
+                for (let user in data) {
+                    table.innerHTML += `<tr>
+                        <td>${user}</td>
+                        <td>${data[user]}</td>
+                    </tr>`;
+                }
+            });
+    </script>
+
+</body>
+</html>

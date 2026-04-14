@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+input {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    width: 200px;
+}
+
+.btn-group {
+    margin-top: 10px;
+}
